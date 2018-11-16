@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @project.name %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @project.content %>
+</p>
+
+<p>
+  <strong>Team members:</strong>
+  <% @project.workers.each do |worker| %>
+  <%= worker.first_name %>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
